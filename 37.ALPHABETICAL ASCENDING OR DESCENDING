@@ -1,0 +1,44 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the list of names from the user
+        System.out.print("Enter the number of names: ");
+        int n = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+
+        String[] names = new String[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter name " + (i + 1) + ": ");
+            names[i] = scanner.nextLine();
+        }
+
+        // Get the order choice from the user
+        System.out.print("Order (A for Ascending, D for Descending): ");
+        char order = scanner.next().charAt(0);
+
+        // Convert the array to a list for easier sorting
+        List<String> nameList = Arrays.asList(names);
+
+        // Sort the list based on the user's choice
+        if (order == 'A' || order == 'a') {
+            Collections.sort(nameList);
+        } else if (order == 'D' || order == 'd') {
+            Collections.sort(nameList, Collections.reverseOrder());
+        } else {
+            System.out.println("Invalid order choice. Please enter 'A' for Ascending or 'D' for Descending.");
+            scanner.close();
+            return;
+        }
+
+        // Display the sorted list
+        System.out.println("Sorted names: " + nameList);
+
+        scanner.close();
+    }
+}
