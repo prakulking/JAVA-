@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class EvenIndexedFibonacciSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the value of n from the user
+        System.out.print("Enter the value of n: ");
+        int n = scanner.nextInt();
+
+        // Array to store Fibonacci numbers
+        int[] fibonacci = new int[2 * n + 1];
+        fibonacci[0] = 0;
+        fibonacci[1] = 1;
+
+        // Calculate Fibonacci numbers up to 2n
+        for (int i = 2; i <= 2 * n; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+
+        // Calculate the sum of Fibonacci numbers at even indexes
+        int sum = 0;
+        for (int i = 0; i <= 2 * n; i += 2) {
+            sum += fibonacci[i];
+        }
+
+        // Display the result
+        System.out.println("Sum of Fibonacci numbers at even indexes: " + sum);
+
+        scanner.close();
+    }
+}
