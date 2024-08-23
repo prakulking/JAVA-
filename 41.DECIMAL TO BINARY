@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the decimal number from the user
+        System.out.print("Enter a decimal number: ");
+        int decimal = scanner.nextInt();
+
+        // Convert decimal to binary
+        String binary = convertDecimalToBinary(decimal);
+
+        // Print the binary result
+        System.out.println("Binary representation: " + binary);
+
+        scanner.close();
+    }
+
+    // Method to convert decimal to binary
+    public static String convertDecimalToBinary(int decimal) {
+        // Edge case for decimal 0
+        if (decimal == 0) {
+            return "0";
+        }
+
+        StringBuilder binary = new StringBuilder();
+
+        // Loop to calculate binary representation
+        while (decimal > 0) {
+            int remainder = decimal % 2;
+            binary.insert(0, remainder); // Prepend remainder to the binary string
+            decimal = decimal / 2;
+        }
+
+        return binary.toString();
+    }
+}
