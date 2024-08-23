@@ -1,0 +1,84 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class MeanMedianMode {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the number of elements from the user
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+
+        // Get the list of numbers from the user
+        int[] numbers = new int[n];
+        System.out.println("Enter the numbers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        // Calculate mean, median, and mode
+        double mean = calculateMean(numbers);
+        double median = calculateMedian(numbers);
+        int mode = calculateMode(numbers);
+
+        // Print the results
+        System.out.println("Mean: " + mean);
+        System.out.println("Median: " + median);
+        System.out.println("Mode: " + (mode == Integer.MIN_VALUE ? "No mode" : mode));
+
+        scanner.close();
+    }
+
+    // Method to calculate mean
+    public static double calculateMean(int[] numbers) {
+        double sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return sum / numbers.length;
+    }
+
+    // Method to calculate median
+    public static double calculateMedian(int[] numbers) {
+        Arrays.sort(numbers); // Sort the array
+        int n = numbers.length;
+
+        // If the number of elements is odd, return the middle element
+        if (n % 2 != 0) {
+            return numbers[n / 2];
+        } else {
+            // If the number of elements is even, return the average of the two middle elements
+            return (numbers[(n - 1) / 2] + numbers[n / 2]) / 2.0;
+        }
+    }
+
+    // Method to calculate mode
+    public static int calculateMode(int[] numbers) {
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+
+        // Build the frequency map
+        for (int num : numbers) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+
+        int maxCount = 0;
+        int mode = Integer.MIN_VALUE;
+        boolean isUnique = true;
+
+        // Find the mode based on frequency
+        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            int count = entry.getValue();
+            if (count > maxCount) {
+                maxCount = count;
+                mode = entry.getKey();
+                isUnique = true;
+            } else if (count == maxCount) {
+                isUnique = false; // More than one mode
+            }
+        }
+
+        return isUnique ? mode : Integer.MIN_VALUE; // Return mode if unique, else return Integer.MIN_VALUE indicating no mode
+    }
+}
