@@ -1,0 +1,40 @@
+package SCANNER;
+import java.util.Scanner;
+public class LOWERCASEUPPCASE {
+	public static void main(String args[])
+	{
+		int lowercase=0;
+		int uppercase=0;
+		int digit=0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("enter the number");
+		while(true)
+		{
+			char ch;
+			ch=scan.next().charAt(0);
+			if(ch=='*')
+			{
+				break;
+			}
+			else if(Character.isLowerCase(ch))
+			{
+				lowercase++;
+			}
+			else if(Character.isUpperCase(ch))
+			{
+				uppercase++;
+			}
+			else if(Character.isDigit(ch))
+			{
+				digit++;
+			}
+					
+		
+		}
+		System.out.println("lower count = "+lowercase);
+		System.out.println("upper count = "+uppercase);
+		System.out.println("Digit = "+digit);
+		
+	}
+
+}

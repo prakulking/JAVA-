@@ -1,0 +1,42 @@
+package SCANNER;
+import java.util.Scanner;
+public class POSITIVENEGATIVE {
+	public static void main(String args[])
+	{
+		int n;
+		 int sumpositive=0;
+		 int posicount=0;
+		 int sumneg=0;
+		 int negcount=0;
+		 Scanner scan=new Scanner(System.in);
+		 System.out.println("enter numbers");
+		 while(true)
+		 {
+			 n=scan.nextInt();
+			 if(n==-1)
+			 {
+				 break;
+			 }
+			 else if(n>=1)
+			 {
+				 sumpositive+=n;
+				 posicount++;
+			 }
+			 else if(n<0)
+			 {
+				 sumneg+=n;
+				 negcount++;
+			 }
+		 }
+		 double posavg=sumpositive/posicount;
+		 double negavg=sumneg/negcount;
+		 System.out.println("positive sum = "+sumpositive);
+		 System.out.println("positive count = "+posicount);
+		 System.out.println("negative sum = "+sumneg);
+		 System.out.println("negative count = "+negcount);
+		 System.out.println("posiavg avg =  "+posavg);
+		 System.out.println("negavg ="+negavg);
+		
+	}
+
+}

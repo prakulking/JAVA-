@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class lcmgcd {
+	public static void main(String args[]) {
+		int a,b,oria,orib,gcd,lcm,temp;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("value of a and b");
+		a=scan.nextInt();
+		b=scan.nextInt();
+		oria=a;
+		orib=b;
+		while(b!=0)
+		{
+			temp=b;
+			b=a%b;
+			a=temp;
+		}
+		gcd=a;
+		System.out.println("gcd"+gcd);
+		lcm=oria*orib/gcd;
+		System.out.println("lcm"+lcm);
+		
+	}
+
+}

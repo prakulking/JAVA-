@@ -1,0 +1,53 @@
+
+package scanner;
+import java.util.Scanner;
+public class Palindrome {
+	public static void main(String args[]) {
+		int choice;
+		Scanner scan=new Scanner (System.in);
+		choice=scan.nextInt();
+		switch(choice)
+		{
+		case 1:
+			int number,rev=0,rem,ori;
+		
+			System.out.println("enter the number");
+			number=scan.nextInt();
+			ori =number;
+			while(number!=0)
+			{
+				rem=number%10;
+				rev=rev*10+rem;
+				number/=10;
+			}
+			if(ori==rev)
+			{
+				System.out.println("palindrome");
+			}
+			else
+			{
+				System.out.println("not a palindrome");
+			}
+			break;
+		
+		case 2:
+			int i;
+			String name="temple";
+			String reve= "";
+					for(i=name.length()-1;i>=0;i--)
+					{
+						reve+=name.charAt(i);
+					}
+					if (name.equals(reve))
+					{
+						System.out.println("palindrome");
+					}
+					else
+					{
+						System.out.println("not a palindrome");	
+					}
+					break;
+		}
+		
+	}
+}

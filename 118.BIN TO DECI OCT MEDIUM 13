@@ -1,0 +1,27 @@
+package SCANNER;
+import java.util.Scanner;
+public class BINTODECIOCT {
+	public static void main(String args[])
+	{
+		String binary;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("enter the binary values");
+		binary=scan.nextLine();
+		int deci=0;
+		int base=1;
+		int i;
+		
+		for(i=binary.length()-1;i>=0;i--)
+		{
+			if(binary.charAt(i)=='1')
+			{
+				deci+=base;
+			}
+			base*=2;
+		}
+		
+		System.out.println("binary= "+binary);
+		System.out.println("decimal = "+deci);
+	}
+
+}

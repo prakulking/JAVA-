@@ -1,0 +1,20 @@
+// 1 reverse loop
+package scanner;
+import java.util.Scanner;
+public class REVERSELOOP {
+	public static void main(String args[])
+	{	int i;
+		String word;
+		String rev="";
+		Scanner scan=new Scanner(System.in);
+		System.out.println("word");
+		word=scan.nextLine();
+		
+		for(i=word.length()-1;i>=0;i--)
+		{
+			rev+=word.charAt(i);
+		}
+		System.out.println("reverse = "+rev);
+	}
+
+}

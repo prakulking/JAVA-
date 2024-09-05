@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class NumberOfFactors {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number from the user
+        System.out.print("Given number: ");
+        int number = scanner.nextInt();
+
+        // Variable to count the number of factors
+        int count = 0;
+
+        // Loop to find factors
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                count++;
+            }
+        }
+
+        // Print the number of factors
+        System.out.println("Number of factors = " + count);
+
+        // Close the scanner
+        scanner.close();
+    }
+}

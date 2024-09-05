@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class SquareAndCube {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the decimal number from the user
+        System.out.print("Given Number: ");
+        double number = scanner.nextDouble();
+
+        // Calculate the square and cube of the number
+        double square = number * number;
+        double cube = number * number * number;
+
+        // Print the results
+        System.out.printf("Square Number: %.3f\n", square);
+        System.out.printf("Cube Number: %.3f\n", cube);
+
+        // Close the scanner
+        scanner.close();
+    }
+}

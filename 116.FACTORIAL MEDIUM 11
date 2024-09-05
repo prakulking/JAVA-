@@ -1,0 +1,17 @@
+package SCANNER;
+import java.util.Scanner;
+public class RECURSIVE {
+	public static void main(String args[])
+	{
+		int i,fact=1,n;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("numbers");
+		n=scan.nextInt();
+		for(i=1;i<=n;i++)
+		{
+			fact*=i;
+		}
+		System.out.println("factorial = "+fact);
+	}
+
+}

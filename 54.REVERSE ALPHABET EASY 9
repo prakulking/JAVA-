@@ -1,0 +1,30 @@
+//5.vowels 
+package scanner;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Collections;
+public class REVERSELOOP{
+	public static void main(String args[])
+	{
+	int i,n;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("word");
+	n=scan.nextInt();
+	String word[]=new String[n];
+	
+	for(i=0;i<n;i++)
+	{
+	word[i]=scan.nextLine();	
+	}
+	
+	for(i=0;i<n;i++)
+	{
+		Arrays.sort(word,Collections.reverseOrder());
+	}
+	for(String name:word)
+	{
+		System.out.print(name+" ");
+	}
+	
+	}
+}

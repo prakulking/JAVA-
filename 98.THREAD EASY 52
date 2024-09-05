@@ -1,0 +1,46 @@
+class MyThread extends Thread {
+    private String threadName;
+
+    public MyThread(String name) {
+        this.threadName = name;
+    }
+
+    @Override
+    public void run() {
+        try {
+            System.out.println(threadName + " is running...");
+            // Simulate some work with sleep
+            Thread.sleep(1000);
+            System.out.println(threadName + " has finished.");
+        } catch (InterruptedException e) {
+            System.out.println(threadName + " was interrupted.");
+        }
+    }
+}
+
+public class MultiThreadExample {
+    public static void main(String[] args) {
+        // Create two threads
+        MyThread thread1 = new MyThread("Thread 1");
+        MyThread thread2 = new MyThread("Thread 2");
+
+        try {
+            // Start the first thread
+            thread1.start();
+
+            // Use join to wait for the first thread to finish
+            thread1.join();
+
+            // Start the second thread after a delay of 500ms
+            Thread.sleep(500);
+            thread2.start();
+
+            // Use join to wait for the second thread to finish
+            thread2.join();
+        } catch (InterruptedException e) {
+            System.out.println("Main thread was interrupted.");
+        }
+
+        System.out.println("Both threads have finished.");
+    }
+}

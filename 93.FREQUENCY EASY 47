@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class WordFrequency {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input the paragraph from the user
+        System.out.println("Enter the paragraph:");
+        String paragraph = scanner.nextLine();
+        
+        // Input the word to find the frequency of
+        System.out.println("Enter the word to find its frequency:");
+        String wordToFind = scanner.nextLine();
+        
+        // Convert both paragraph and word to lower case to handle case insensitivity
+        paragraph = paragraph.toLowerCase();
+        wordToFind = wordToFind.toLowerCase();
+        
+        // Split the paragraph into words
+        String[] words = paragraph.split("\\s+"); // Splits by whitespace
+        
+        int frequency = 0;
+        
+        // Count the occurrences of the word
+        for (String word : words) {
+            if (word.equals(wordToFind)) {
+                frequency++;
+            }
+        }
+        
+        System.out.println("The word '" + wordToFind + "' appears " + frequency + " times in the paragraph.");
+    }
+}

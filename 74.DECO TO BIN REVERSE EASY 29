@@ -1,0 +1,43 @@
+package EASY;
+import java.util.Scanner;
+
+public class DecimalToReversedBinaryUsingLoops {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a decimal number:");
+        int decimal = scan.nextInt();
+
+        // Convert decimal to binary using loops
+        String binaryString = "";
+        int tempDecimal = decimal;
+        while (tempDecimal > 0) {
+            int remainder = tempDecimal % 2;
+            binaryString = remainder + binaryString;  // Prepend the remainder to the binary string
+            tempDecimal = tempDecimal / 2;
+        }
+
+        System.out.println("Binary representation of " + decimal + " is: " + binaryString);
+
+        // Reverse the binary string using loops
+        String reversedBinaryString = "";
+        for (int i = binaryString.length() - 1; i >= 0; i--) {
+            reversedBinaryString += binaryString.charAt(i);
+        }
+
+        System.out.println("Reversed binary string is: " + reversedBinaryString);
+
+        // Convert reversed binary string to decimal using loops
+        int reversedDecimal = 0;
+        int base = 1;  // The base of binary number system
+        for (int i = reversedBinaryString.length() - 1; i >= 0; i--) {
+            if (reversedBinaryString.charAt(i) == '1') {
+                reversedDecimal += base;
+            }
+            base = base * 2;
+        }
+
+        System.out.println("Decimal value of the reversed binary string is: " + reversedDecimal);
+
+        scan.close();
+    }
+}

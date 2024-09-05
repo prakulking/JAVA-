@@ -1,0 +1,58 @@
+package scanner;  // This is the package declaration, but it might not be necessary unless you have defined this package in your project.
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+
+public class REVERSELOOP {
+    public static void main(String args[]) {
+        int n1, n2, i;
+        Scanner scan = new Scanner(System.in);
+        
+        // Input size of the first array
+        System.out.println("Enter the size of the first array:");
+        n1 = scan.nextInt();
+        
+        // Input size of the second array
+        System.out.println("Enter the size of the second array:");
+        n2 = scan.nextInt();
+
+        // Declare and initialize the first array
+        int arr1[] = new int[n1];
+        System.out.println("Enter elements for the first array:");
+        for (i = 0; i < n1; i++) {
+            arr1[i] = scan.nextInt();
+        }
+
+        // Declare and initialize the second array
+        int arr2[] = new int[n2];
+        System.out.println("Enter elements for the second array:");
+        for (i = 0; i < n2; i++) {
+            arr2[i] = scan.nextInt();
+        }
+
+        // Merge the arrays using the mergeArrays method
+        List<Integer> mergeList = mergeArrays(arr1, arr2);
+        System.out.println("Merged and sorted list: " + mergeList);
+    }
+
+    // Method to merge two arrays into a sorted list
+    public static List<Integer> mergeArrays(int arr1[], int arr2[]) {
+        List<Integer> mergeList = new ArrayList<>();
+        
+        // Add all elements from the first array to the mergeList
+        for (int num : arr1) {
+            mergeList.add(num);
+        }
+
+        // Add all elements from the second array to the mergeList
+        for (int num : arr2) {
+            mergeList.add(num);
+        }
+
+        // Sort the merged list
+        Collections.sort(mergeList);
+        
+        return mergeList;
+    }
+}

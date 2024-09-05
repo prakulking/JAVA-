@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class FrequencyOfElements {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input: Getting array elements from user
+        System.out.println("Enter the number of elements in the array:");
+        int n = scanner.nextInt(); // Read the number of elements in the array
+        int[] array = new int[n]; // Initialize the array with size n
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt(); // Fill the array with user input
+        }
+
+        // Initialize an array to keep track of visited elements
+        boolean[] visited = new boolean[n]; // Boolean array to mark elements as visited
+
+        System.out.println("Element | Frequency");
+        System.out.println("-------------------");
+
+        // Finding frequency of each element
+        for (int i = 0; i < n; i++) {
+            if (visited[i]) {
+                continue; // Skip already counted elements
+            }
+
+            int count = 1; // Start counting from 1 for the current element
+            for (int j = i + 1; j < n; j++) {
+                if (array[i] == array[j]) { // If a duplicate is found
+                    count++; // Increment the count
+                    visited[j] = true; // Mark the duplicate element as visited
+                }
+            }
+
+            System.out.println("   " + array[i] + "    |    " + count); // Print element and its frequency
+        }
+    }
+}

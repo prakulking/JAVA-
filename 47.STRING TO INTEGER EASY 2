@@ -1,0 +1,14 @@
+// 2 string to integer reverse loop
+package scanner;
+import java.util.Scanner;
+public class REVERSELOOP {
+	public static void main(String args[])
+	{	String word;
+		int number;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("word");
+		word=scan.nextLine();
+		number=Integer.parseInt(word);
+		System.out.println("string to number = "+number);
+	}
+}

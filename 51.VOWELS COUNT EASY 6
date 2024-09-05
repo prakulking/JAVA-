@@ -1,0 +1,27 @@
+package scanner;
+import java.util.Scanner;
+public class REVERSELOOP{
+	public static void main(String args[])
+	{	int i;
+		String word;
+		int vowels=0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("word");
+		word=scan.nextLine();
+		
+		for(i=0;i<word.length();i++)
+		{
+			char ch= word.charAt(i);
+		{
+				if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='o'||ch=='u')
+				{
+					vowels++;
+				}
+		}
+		}
+		System.out.println("vowels = "+vowels);
+		
+	
+		
+	}
+}

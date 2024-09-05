@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class DecimalConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Decimal Number:");
+        int decimalNumber = scanner.nextInt();
+        String binaryNumber = "";
+        int tempDecimal = decimalNumber;
+        while (tempDecimal > 0) {
+            binaryNumber = (tempDecimal % 2) + binaryNumber;
+            tempDecimal /= 2;
+        }
+        if (binaryNumber.isEmpty()) {
+            binaryNumber = "0";
+        }
+
+        String octalNumber = "";
+        tempDecimal = decimalNumber;
+        while (tempDecimal > 0) {
+            octalNumber = (tempDecimal % 8) + octalNumber;
+            tempDecimal /= 8;
+        }
+        if (octalNumber.isEmpty()) {
+            octalNumber = "0";
+        }
+        System.out.println("Binary Number = " + binaryNumber);
+        System.out.println("Octal = " + octalNumber);
+    }
+}

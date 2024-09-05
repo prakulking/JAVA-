@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class MaxSubarraySum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input the size of the array
+        System.out.println("Enter the size of the array:");
+        int n = scanner.nextInt();
+        
+        // Initialize the array
+        int[] nums = new int[n];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            nums[i] = scanner.nextInt();
+        }
+
+        // Initialize variables for Kadane's Algorithm
+        int maxCurrent = nums[0];
+        int maxGlobal = nums[0];
+        
+        // Iterate through the array
+        for (int i = 1; i < n; i++) {
+            // Update maxCurrent to the maximum of the current element alone or the current element plus maxCurrent
+            maxCurrent = Math.max(nums[i], maxCurrent + nums[i]);
+            
+            // Update maxGlobal if maxCurrent is greater
+            if (maxCurrent > maxGlobal) {
+                maxGlobal = maxCurrent;
+            }
+        }
+        
+        // Print the result
+        System.out.println("The maximum subarray sum is: " + maxGlobal);
+    }
+}

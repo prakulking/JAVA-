@@ -1,0 +1,22 @@
+//3.valid or not
+package scanner;
+import java.util.Scanner;
+public class REVERSELOOP{
+	public static void main(String args[])
+	{
+		String name1;
+		String name2;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("name1 and name 2");
+		name1=scan.nextLine();
+		name2=scan.nextLine();
+		if(name1.equals(name2))
+		{
+			System.out.println("valid string");
+		}
+		else
+		{
+			System.out.println(" not valid string");
+		}
+	}
+}

@@ -1,0 +1,41 @@
+package SCANNER;
+import java.util.Scanner;
+public class MARKS {
+	public static void main(String args[])
+	{
+		int python,cprogramming,maths,physics;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("enter the values ");
+		python=scan.nextInt();
+		cprogramming=scan.nextInt();
+		maths=scan.nextInt();
+		physics=scan.nextInt();
+		double aggregate;
+		int total=python+cprogramming+maths+physics;
+		aggregate=total/4.0;
+		System.out.println("total = "+total);
+		System.out.println("aggregate = "+aggregate);
+		if(aggregate>75)
+		{
+			System.out.println("Distinction");	
+		}
+		else if(aggregate >=60 && aggregate <75)
+		{
+			System.out.println("First Distinction");
+		}
+		else if(aggregate>=50 &&aggregate<60)
+		{
+			System.out.println("Second distinction");
+		}
+		else if(aggregate>=40&&aggregate<50)
+		{
+			System.out.println("Third division");
+		}
+		else
+		{
+			System.out.println("fail");
+		}
+		
+	}
+
+}

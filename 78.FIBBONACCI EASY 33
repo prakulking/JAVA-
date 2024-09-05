@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of terms for the Fibonacci series
+        System.out.print("Enter the n value: ");
+        int n = scanner.nextInt();
+
+        // Initialize the first two terms of the Fibonacci series
+        int first = 0, second = 1;
+
+        // Print the Fibonacci series
+        System.out.print(first + "\t"); // Print the first term
+        if (n > 1) {
+            System.out.print(second + "\t"); // Print the second term
+        }
+
+        // Generate and print the rest of the Fibonacci series
+        for (int i = 2; i < n; i++) {
+            int next = first + second; // Compute the next term
+            System.out.print(next + "\t"); // Print the next term
+            first = second; // Move to the next term
+            second = next; // Move to the next term
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}

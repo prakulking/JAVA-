@@ -1,0 +1,42 @@
+package scanner;
+import java.util.Scanner;
+public class REVERSELOOP{
+	public static void main(String args[])
+	{	int i;
+		String word;
+		int vowels=0,conso=0;
+		String vowelsword="";
+		String consoword="";
+		
+		Scanner scan=new Scanner(System.in);
+		System.out.println("word");
+		word=scan.nextLine();
+		
+		for(i=0;i<word.length();i++)
+		{
+			char ch= word.charAt(i);
+		{
+				if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='o'||ch=='u')
+				{
+					vowels++;
+					vowelsword+=ch+" ";
+					
+				}
+				else
+				{
+					conso++;
+					consoword+=ch+" ";
+					
+				}
+		}
+		}
+		System.out.println("vowels = "+vowels);
+		System.out.println("vowelsword = "+vowelsword);
+		System.out.println("consonant number = "+conso);
+		System.out.println("consowords = "+consoword);
+		
+		
+	
+		
+	}
+}

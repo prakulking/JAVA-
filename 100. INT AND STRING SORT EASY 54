@@ -1,0 +1,60 @@
+package scanner;
+import java.util.Scanner;
+import java.util.Arrays;
+public class DIFFSORT {
+	public static void main(String args[])
+	{
+		int n,i,j,n1;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the limit");
+		n=scan.nextInt();
+		n1=scan.nextInt();
+		
+		
+		int arr[]=new int[n];
+		
+		for(i=0;i<n;i++)
+		{
+			System.out.print("element = "+i+" = ");
+			arr[i]=scan.nextInt();
+		}
+		
+		for(i=0;i<arr.length;i++)
+		{
+			for(j=i+1;j<n;j++)
+			{
+				if(arr[i]>arr[j])
+				{
+					int temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+		for(int num:arr)
+		{
+			System.out.println(num);
+		}
+		
+		String word[]=new String[n];
+		
+		for(i=0;i<n1;i++)
+		{
+			System.out.print("element = "+i+" = ");
+			word[i]=scan.nextLine();
+		}
+		
+		for(i=0;i<n1;i++)
+		{
+			Arrays.sort(word);
+		}
+		for(String nums: word)
+		{
+			System.out.println(nums);
+		}
+		
+		
+		
+	}
+
+}
